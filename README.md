@@ -4,11 +4,20 @@ Browser-based HTML Viewer for Journal Articles and Monographs based on JATS Stan
 
 Functionality for BITS (Book extension for JATS)  is limited and constantly improved.
 
+### Lens library
 
+- **Source**: <https://github.com/ParthoShuvo/lens>
+
+### New changes
+
+- Fix missing heading levels in Contents panel view
+- Remove abstract details from Cover view
+- Add Abstract as top level heading
+- Present abstract contents (paragraphs) under Abstract view
 
 #### Implemented Extensions
 
-| Feature |	Ready | Live Links in monographs |
+| Feature | Ready | Live Links in monographs |
 | --- | --- | --- |
 | Audio/Video from external repositories| ✓ |[demo](https://heiup.uni-heidelberg.de/reader/index/310/310-69-79515-1-10-20171115.xml#figures) |
 | Citation blocks (with unique IDs)   | ✓ | [demo](https://heiup.uni-heidelberg.de/reader/index/43/43-68-231-1-10-20151008.xml#content/box_25) |
@@ -30,19 +39,16 @@ Functionality for BITS (Book extension for JATS)  is limited and constantly impr
 | Resizable reader panel | :construction_worker: | |
 | Software Source-code in Lens |:construction_worker: |[ticket](https://gitlab.ub.uni-heidelberg.de/wit/verlag-portale/issues/161) |
 
-
 #### Feature limitations
-| Feature |	 Value | Remarks |
+
+| Feature |  Value | Remarks |
 | --- | --- | --- |
 | Browser support  | Google Chrome, Firefox, Opera,  Microsoft Edge , Safari| Limited support for internet explorer |
 | Minimum recommended resolution  | 768 * 1024 (iPad) | Although smaller resolutions may work |
 
-
 ## Installation
 
-
-
- ```
+```bash
 # Clone source repository 
 git clone https://github.com/withanage/UBHD-Lens.git
 cd UBHD-Lens
@@ -50,11 +56,15 @@ cd UBHD-Lens
 # Install npm for your distribution e.g. sudo apt-get install npm
 
 # Install gulp
-npm install gulp gulp-sass gulp-uglify browserify gulp-rename through2 path gulp-livereload rename st
+npm -g install gulp gulp-sass gulp-uglify browserify gulp-rename through2 path gulp-livereload rename st
 
 #  install submodues
 npm install
 
+# build project
+npm run build
+or
+gulp
  ```
 
 ## Development
@@ -62,51 +72,48 @@ npm install
 ### Run server application
 
 ```bash
-node server
+npm start
 ```
 
+### Run built project in dist folder
 
-###  Examples
+use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in vs code
+
+### Examples
 
 Example assumes port **4001**. Change port accordingly.
- 
-* [Features](http://localhost:4001/?url=data/example.xml)
-* [Sample Article](http://localhost:4001/?url=data/bmj_example.xml)
-* [Sample Article with MathML ](http://localhost:4001/?url=data/pnas_sample.xml)
+
+- [Features](http://localhost:4001/?url=data/example.xml)
+- [Sample Article](http://localhost:4001/?url=data/bmj_example.xml)
+- [Sample Article with MathML](http://localhost:4001/?url=data/pnas_sample.xml)
 
 ### Test
-* Copy file into `data` folder.
-* Open with http://localhost:4001/?url=data/my_file.xml
 
- 
+- Copy file into `data` folder.
+- Open with <http://localhost:4001/?url=data/my_file.xml>
 
-### Integration  procedure for external services. 
+### Integration  procedure for external services
 
-| command | exaplanation 
+| command | exaplanation
 |  --- | ---
 | `gulp` | Complies the lens distribution  in the dist folder
-| Copy  `dist` folder | Copy folder into the external environment 
+| Copy  `dist` folder | Copy folder into the external environment
 | Change index.html file   according to  the environment   | make sure the XML file is loaded accordingly and the lens.css and lens.js are in the correct paths, if you rename them.
 
-
-  
 ### Integration examples
 
 wep2py application
 
- * [Index.html](https://github.com/UB-Heidelberg/UBHD-OMPPortal/blob/master/views/reader/index.html)
- * [CSS Datei](https://github.com/UB-Heidelberg/UBHD-OMPPortal/blob/master/static/css/lens.css)
- * [JS Datei](https://github.com/UB-Heidelberg/UBHD-OMPPortal/blob/master/static/js/lens2.js)  
- 
+- [Index.html](https://github.com/UB-Heidelberg/UBHD-OMPPortal/blob/master/views/reader/index.html)
+- [CSS Datei](https://github.com/UB-Heidelberg/UBHD-OMPPortal/blob/master/static/css/lens.css)
+- [JS Datei](https://github.com/UB-Heidelberg/UBHD-OMPPortal/blob/master/static/js/lens2.js)  
+
  Open Journal Systems
- 
- * [Index.html as php template](https://github.com/withanage/lensGalleyBits/blob/master/templates/display.tpl)
-  * [CSS Datei](https://github.com/withanage/lensGalleyBits/blob/master/libs/lens/lens.css)
-  * [JS Datei](https://github.com/withanage/lensGalleyBits/blob/master/libs/lens/lens.js)  
+
+- [Index.html as php template](https://github.com/withanage/lensGalleyBits/blob/master/templates/display.tpl)
+- [CSS Datei](https://github.com/withanage/lensGalleyBits/blob/master/libs/lens/lens.css)
+- [JS Datei](https://github.com/withanage/lensGalleyBits/blob/master/libs/lens/lens.js)  
   
- 
 ## Developer
 
-* https://github.com/withanage
-
-
+- <https://github.com/withanage>

@@ -16,36 +16,38 @@ abstractView.Prototype = function () {
     this.render = function () {
         NodeView.prototype.render.call(this);
         this.content = document.createElement("div");
+        this.content.classList.add('abstract-content');
 
-        var title = this.node.title;
 
-        if (title != null || title !== undefined) {
-            if (title.textContent === undefined & title.length == 0) {
-                title = document.createElement("div");
-                title.className = 'content';
-                var title_text = document.createElement("div");
-                title_text.className = 'content-node text';
-                title.appendChild(title_text);
-                this.content.appendChild(title);
+        // var title = this.node.title;
 
-            }
-            else {
-                if (title.length > 0) {
-                    var childView = this.createChildView(title);
-                    var childViewEl = childView.render().el;
-                    childViewEl.className += ' title';
-                    this.content.appendChild(childViewEl);
-                }
+        // if (title != null || title !== undefined) {
+        //     if (title.textContent === undefined & title.length == 0) {
+        //         title = document.createElement("div");
+        //         title.className = 'content';
+        //         var title_text = document.createElement("div");
+        //         title_text.className = 'content-node text';
+        //         title.appendChild(title_text);
+        //         this.content.appendChild(title);
 
-            }
-        }
+        //     }
+        //     else {
+        //         if (title.length > 0) {
+        //             var childView = this.createChildView(title);
+        //             var childViewEl = childView.render().el;
+        //             childViewEl.className += ' title';
+        //             this.content.appendChild(childViewEl);
+        //         }
+
+        //     }
+        // }
 
         if (this.node.children.length > 0) {
             this.el.appendChild(this.content);
             this.renderChildren();
         }
         return this;
-    };
+    };    
 };
 
 abstractView.Prototype.prototype = CompositeView.prototype;

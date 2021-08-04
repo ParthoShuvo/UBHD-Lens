@@ -2,6 +2,9 @@
 
 var Lens = require("lens/reader");
 var panels = Lens.getDefaultPanels();
+
+var infoPanel = require("./panels/info");
+panels.push(infoPanel);
   
 // All available converters
 var CustomConverter = require("./custom_converter");

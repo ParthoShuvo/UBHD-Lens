@@ -1,12 +1,15 @@
 {
   "name": "lens-starter",
   "description": "UB Heidelberg - Lens Development",
+  "scripts": {
+    "build": "gulp"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "ejs": "*",
     "express": "^4.16.4",
-    "lens": "github:withanage/lens",
+    "lens": "github:ParthoShuvo/lens",
     "method-override": "^3.0.0",
     "npm": "^6.14.6",
     "path": "^0.12.7",
