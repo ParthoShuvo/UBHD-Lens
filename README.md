@@ -9,7 +9,7 @@ Functionality for BITS (Book extension for JATS)  is limited and constantly impr
 - **Source**: <https://github.com/ParthoShuvo/lens>
 
 ### New changes
-
+- TRP issue # 12442
 - Fix missing heading levels in Contents panel view
 - Remove abstract details from Cover view
 - Add Abstract as top level heading
@@ -50,7 +50,7 @@ Functionality for BITS (Book extension for JATS)  is limited and constantly impr
 
 ```bash
 # Clone source repository 
-git clone https://github.com/withanage/UBHD-Lens.git
+git clone https://github.com/ParthoShuvo/UBHD-Lens.git
 cd UBHD-Lens
 
 # Install npm for your distribution e.g. sudo apt-get install npm
@@ -69,17 +69,16 @@ gulp
 
 ## Development
 
+### Run built project in dist folder
+
+use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in vs code
+
 ### Run server application
 
 ```bash
 npm start
 ```
-
-### Run built project in dist folder
-
-use [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension in vs code
-
-### Examples
+<!-- ### Examples
 
 Example assumes port **4001**. Change port accordingly.
 
@@ -90,7 +89,7 @@ Example assumes port **4001**. Change port accordingly.
 ### Test
 
 - Copy file into `data` folder.
-- Open with <http://localhost:4001/?url=data/my_file.xml>
+- Open with <http://localhost:4001/?url=data/my_file.xml> -->
 
 ### Integration  procedure for external services
 

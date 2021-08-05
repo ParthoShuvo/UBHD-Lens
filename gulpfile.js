@@ -15,9 +15,6 @@ var st = require('st');
 gulp.task('assets', function() {
   return gulp.src('assets/**/*', {base:"./assets"})
         .pipe(gulp.dest('dist'));
-
-  gulp.src('data/**/*', {base:"."})
-        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('sass', function () {
